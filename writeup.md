@@ -1,13 +1,6 @@
 
 ### Project Writeup
 
-[//]: # (Image References)
-
-[image1]: ./pr2_robot/misc images/Normalized confusion matrix.JPG
-[image2]: ./pr2_robot/misc images/World 1.JPG
-[image3]: ./pr2_robot/misc images/World 2 .JPG
-[image4]: ./pr2_robot/misc images/World 3.JPG
-
 
 ### Perception Pipeline
 First, a perception.py script was written containing a pcl_callback() function that processes the ROS pointclould msg recieved from the RGB-D camera and a pr2_mover() function to load the simulation scene parameters and request the PR2 robot's PickPlace service that handles the robot's arms movements to pick each identified object and place it in it's correct dropbox.
@@ -32,7 +25,7 @@ After machine learning predictions were made the detected objects list was then 
 
 Finally, new output_*.yaml files are created containing those same parameters passed to the PickPlace service. 
 
-*  : represents the number 1, 2 or 3 for each simulation scene in this project.
+'*'  : represents the number 1, 2 or 3 for each simulation scene in this project.
 
 ### Feature capture and model training
 
@@ -41,7 +34,7 @@ Both those histogram features were setup under the functions ‘compute_color_hi
 The ‘capture_features.py’ script was used to generate a training set by calling the ‘feature.py’ functions for different poses of each object used in the project. The number of poses was set to 80.
 After that, the algorithm was trained using the ‘train_svm.py’ script. The script generates a model.sav file to be used by the ‘perception.py’ script in the project and normalized & non-normalized confusion matrices of the model prediction performance. The best obtained normalized confusion matrix using the mentioned parameters is shown below:
 
-![alt text][image1]
+![alt text](https://github.com/mo-messidi/RoboND-Perception-Project/blob/master/pr2_robot/misc%20images/Normalized%20confusion%20matrix.JPG)
 
 As shown above, the prediction accuracy for the ‘book’, ‘ snacks’ and ‘sticky_notes’ objects have the lowest accuracy.  That was evident when running the project as these objects were sometimes misidentified.
  
@@ -49,15 +42,15 @@ As shown above, the prediction accuracy for the ‘book’, ‘ snacks’ and �
 The images below show the pr2_robots attempt to identify the objects in each simulated scene. The number of correct items identified is shown above each image.
 Scene 1: 3 of 3 correct idenfitications
 
-![alt text][image2]
+![alt text](https://github.com/mo-messidi/RoboND-Perception-Project/blob/master/pr2_robot/misc%20images/World%201.JPG)
 
 Scene 2: 4 of 5 correct identifications
 
-![alt text][image3]
+![alt text](https://github.com/mo-messidi/RoboND-Perception-Project/blob/master/pr2_robot/misc%20images/World%202%20.JPG)
 
 Scene 3: 6 of 8 correct identifications
 
-![alt text][image4]
+![alt text](https://github.com/mo-messidi/RoboND-Perception-Project/blob/master/pr2_robot/misc%20images/World%203.JPG)
 
 ### Future improvements
 
