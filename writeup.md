@@ -31,7 +31,8 @@ Finally, a SVM machine learning algorithm utilizing histogram features of object
 After machine learning predictions were made the detected objects list was then passed as input to the pr2_mover() function where it was checked for length accuracy and passed, along with several other parameters obtained from the ‘pick_list_*.yaml & dropbox.yaml files, as ROS messages to the PickPlace service. 
 
 Finally, new output_*.yaml files are created containing those same parameters passed to the PickPlace service. 
-* : represents the number 1, 2 or 3 for each simulation scene in this project.
+
+*  : represents the number 1, 2 or 3 for each simulation scene in this project.
 
 ### Feature capture and model training
 
